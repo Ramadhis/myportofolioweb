@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <title>Ramadhiansyah | Portofolio Web</title>
+    <style>
+      .bg-content {
+        background-color: #00aeff;
+      }
+      .at {
+        margin-top: 130px;
+      }
+      .logo-size {
+        width: 40px;
+      }
+      .f-style-bhan {
+        font-family: "Bahnschrift";
+        font-weight: bold;
+      }
+
+      .f-style-free {
+        font-family: "Freestyle Script";
+      }
+
+      .nav_b{
+        transition: background 0.5s;
+      }
+
+      .nav_b:hover {
+        background: #ffffff;
+        color: #00aeff !important;
+        padding: 7px;
+        border-radius: 5px;
+        
+      }
+      
+      .nav_b:focus {
+        background: #ffffff;
+        color: #00aeff !important;
+        padding: 7px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body class="bg-content">
+    <div class="container-fluid">
+      <div class="row" style="">
+        <!-- d-flex justify-content-evenly -->
+        <div style="width: 60px; min-height: 100vh; background-color: #0095ff; position: fixed">
+          <img src="img/logo.png" class="logo-size mt-3" />
+          <div class="text-center at">
+            <div>
+              <a href="#home" class="btn_home material-icons text-light mb-2 nav_b text-decoration-none first" style="padding: 7px"> home</a>
+            </div>
+            <div>
+              <a href="#about" class="btn_about material-icons text-light mb-2 nav_b text-decoration-none" style="padding: 7px"> person </span></a>
+            </div>
+            <div>
+              <a href="#skill" class="btn_skill material-icons text-light mb-2 nav_b text-decoration-none" style="padding: 7px"> api </span></a>
+            </div>
+            <div>
+              <a href="#portofolio" class="btn_porto material-icons text-light mb-2 nav_b text-decoration-none" style="padding: 7px"> description </span></a>
+            </div>
+            <div>
+              <a href="#email" class="btn_email material-icons text-light nav_b text-decoration-none" style="padding: 7px"> email </span></a>
+            </div>
+          </div>
+        </div>
+        <div class="content col bg-side" style="padding-left: 70px"></div>
+        <div class="col-md-12 f-style-free text- fixed-bottom text-light mb-2 me-4">
+          <h3 class="" style="float: right; bottom: 0px">&copy; Ramadhiansyah 2022</h3>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+      
+      $(".content").load("part_home.html");
+      $('.first').focus();
+
+      $(".btn_home").on("click", function () {
+        $(".content").load("part_home.html");
+      });
+      $(".btn_about").on("click", function () {
+        $(".content").load("part_about.html");
+      });
+      $(".btn_skill").on("click", function () {
+        $(".content").load("part_skill.html");
+      });
+      $(".btn_porto").on("click", function () {
+        $(".content").load("part_porto.html");
+      });
+      $(".btn_email").on("click", function () {
+        $(".content").load("part_email.html");
+      });
+      
+    </script>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
