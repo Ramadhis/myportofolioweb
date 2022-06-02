@@ -1,0 +1,60 @@
+<div id="chart" class="mt-3 fe" style="text-align: center"></div>
+<script>
+  var options = {
+    series: [
+      {
+        name: "Series 1",
+        data: [8, 8, 7, 7, 6, 6],
+      },
+    ],
+    tooltip: {
+      enabled: false,
+      intersect: true,
+    },
+    chart: {
+      height: 350,
+      type: "bar",
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 4,
+        horizontal: true,
+      },
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ["#0d6efd"],
+      dashArray: 0,
+    },
+
+    markers: {
+      size: 4,
+      hover: {
+        size: 7,
+      },
+    },
+    xaxis: {
+      categories: ["PHP", "Mysql", "Laravel", "Yii", "ExpressJs", "Nodejs"],
+      max: 10,
+      labels: {
+        show: true,
+        style: {
+          colors: "#ffffff",
+        },
+      },
+    },
+    yaxis: {
+      show: true,
+      labels: {
+        style: {
+          colors: "#ffffff",
+        },
+      },
+    },
+  };
+
+  var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+  chart.render();
+</script>

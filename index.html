@@ -29,7 +29,7 @@
         font-family: "Freestyle Script";
       }
 
-      .nav_b{
+      .nav_b {
         transition: background 0.5s;
       }
 
@@ -38,9 +38,8 @@
         color: #00aeff !important;
         padding: 7px;
         border-radius: 5px;
-        
       }
-      
+
       .nav_b:focus {
         background: #ffffff;
         color: #00aeff !important;
@@ -51,7 +50,7 @@
   </head>
   <body class="bg-content">
     <div class="container-fluid">
-      <div class="row" style="">
+      <div class="row">
         <!-- d-flex justify-content-evenly -->
         <div style="width: 60px; min-height: 100vh; background-color: #0095ff; position: fixed">
           <img src="img/logo.png" class="logo-size mt-3" />
@@ -60,16 +59,16 @@
               <a href="#home" class="btn_home material-icons text-light mb-2 nav_b text-decoration-none first" style="padding: 7px"> home</a>
             </div>
             <div>
-              <a href="#about" class="btn_about material-icons text-light mb-2 nav_b text-decoration-none" style="padding: 7px"> person </span></a>
+              <a href="#about" class="btn_about material-icons text-light mb-2 nav_b text-decoration-none" style="padding: 7px"> person</a>
             </div>
             <div>
-              <a href="#skill" class="btn_skill material-icons text-light mb-2 nav_b text-decoration-none" style="padding: 7px"> api </span></a>
+              <a href="#skill" class="btn_skill material-icons text-light mb-2 nav_b text-decoration-none" style="padding: 7px"> api</a>
             </div>
             <div>
-              <a href="#portofolio" class="btn_porto material-icons text-light mb-2 nav_b text-decoration-none" style="padding: 7px"> description </span></a>
+              <a href="#portofolio" class="btn_porto material-icons text-light mb-2 nav_b text-decoration-none" style="padding: 7px"> description</a>
             </div>
             <div>
-              <a href="#email" class="btn_email material-icons text-light nav_b text-decoration-none" style="padding: 7px"> email </span></a>
+              <a href="#email" class="btn_email material-icons text-light nav_b text-decoration-none" style="padding: 7px"> email</a>
             </div>
           </div>
         </div>
@@ -79,28 +78,121 @@
         </div>
       </div>
     </div>
+
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="http://malsup.github.io/jquery.blockUI.js"></script>
     <script>
-      
       $(".content").load("part_home.html");
-      $('.first').focus();
+      $(".first").focus();
 
       $(".btn_home").on("click", function () {
-        $(".content").load("part_home.html");
+        $(".content").load("part_home.html", () => {
+          $.blockUI({
+            message: "Memuat",
+            css: {
+              border: "none",
+              padding: "15px",
+              backgroundColor: "#000",
+              "-webkit-border-radius": "10px",
+              "-moz-border-radius": "10px",
+              opacity: 0.5,
+              color: "#fff",
+            },
+            baseZ: 2000,
+          });
+          $(document).ready(function () {
+            $.unblockUI();
+          });
+        });
       });
       $(".btn_about").on("click", function () {
-        $(".content").load("part_about.html");
+        $(".content").load("part_about.html", () => {
+          $.blockUI({
+            message: "Memuat",
+            css: {
+              border: "none",
+              padding: "15px",
+              backgroundColor: "#000",
+              "-webkit-border-radius": "10px",
+              "-moz-border-radius": "10px",
+              opacity: 0.5,
+              color: "#fff",
+            },
+            baseZ: 2000,
+          });
+          $(document).ready(function () {
+            $.unblockUI();
+          });
+        });
       });
       $(".btn_skill").on("click", function () {
-        $(".content").load("part_skill.html");
+        $(".content").load("part_skill.html", () => {
+          $(document).ready(function () {
+            $.blockUI({
+              message: "Memuat",
+              css: {
+                border: "none",
+                padding: "15px",
+                backgroundColor: "#000",
+                "-webkit-border-radius": "10px",
+                "-moz-border-radius": "10px",
+                opacity: 0.5,
+                color: "#fff",
+              },
+              baseZ: 2000,
+            });
+            $(document).ready(function () {
+              $.unblockUI();
+            });
+          });
+        });
       });
       $(".btn_porto").on("click", function () {
-        $(".content").load("part_porto.html");
+        $(".content").load("part_porto.html", () => {
+          $(document).ready(function () {
+            // document is loaded and DOM is ready
+            $.blockUI({
+              message: "Memuat",
+              css: {
+                border: "none",
+                padding: "15px",
+                backgroundColor: "#000",
+                "-webkit-border-radius": "10px",
+                "-moz-border-radius": "10px",
+                opacity: 0.5,
+                color: "#fff",
+              },
+              baseZ: 2000,
+            });
+            $(document).ready(function () {
+              $.unblockUI();
+            });
+          });
+        });
       });
       $(".btn_email").on("click", function () {
-        $(".content").load("part_email.html");
+        $(".content").load("part_email.html", () => {
+          $(document).ready(function () {
+            // document is loaded and DOM is ready
+            $.blockUI({
+              message: "Memuat",
+              css: {
+                border: "none",
+                padding: "15px",
+                backgroundColor: "#000",
+                "-webkit-border-radius": "10px",
+                "-moz-border-radius": "10px",
+                opacity: 0.5,
+                color: "#fff",
+              },
+              baseZ: 10000,
+            });
+            $(document).ready(function () {
+              $.unblockUI();
+            });
+          });
+        });
       });
-      
     </script>
     <!-- Optional JavaScript; choose one of the two! -->
 

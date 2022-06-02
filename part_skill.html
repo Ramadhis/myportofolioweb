@@ -16,8 +16,10 @@
       <h5 class="mt-2 ms-5">
         <span class="badge bg-primary border border-light">HTML</span>
         <span class="badge bg-primary border border-light">CSS</span>
-        <span class="badge bg-primary border border-light">Javascript</span>
         <span class="badge bg-primary border border-light">Bootstrap</span>
+        <span class="badge bg-primary border border-light">Javascript</span>
+        <span class="badge bg-primary border border-light">Jquery</span>
+        <span class="badge bg-primary border border-light">ReactJs</span>
       </h5>
 
       <h4 class="f-style-free text-light mt-2">&nbsp;&nbsp; &lt/ div &gt</h4>
@@ -28,74 +30,40 @@
       </div>
       <h5 class="mt-2 ms-5">
         <span class="badge bg-primary border border-light">PHP</span>
-        <span class="badge bg-primary border border-light">SQL</span>
-        <span class="badge bg-primary border border-light">Java</span>
+        <span class="badge bg-primary border border-light">Mysql</span>
         <span class="badge bg-primary border border-light">Laravel</span>
-        <span class="badge bg-primary border border-light">Code Igniter</span>
         <span class="badge bg-primary border border-light">Yii</span>
+        <span class="badge bg-primary border border-light">NodeJs</span>
+        <span class="badge bg-primary border border-light">ExpressJs</span>
       </h5>
       <h4 class="f-style-free text-light mt-2">&nbsp;&nbsp; &lt/ div &gt</h4>
       <h4 class="f-style-free text-light">&lt/ html &gt</h4>
     </div>
     <div class="col-md-6 ps-md-4" style="margin-top: 50px">
-      <div id="chart" class="mt-5" style="text-align: center"></div>
+      <ul class="nav nav-tabs">
+        <li class="nav-item bg-blue">
+          <a class="nav-link click-tab-1 active" aria-current="page" href="#">Front-End</a>
+        </li>
+        <li class="nav-item bg-blue">
+          <a class="nav-link click-tab-2" href="#">BackEnd-End</a>
+        </li>
+      </ul>
+      
+      <div class="ch"></div>
     </div>
   </div>
 </div>
 <script src="js/apexcharts.js"></script>
 <script>
-  var options = {
-    series: [
-      {
-        name: "Series 1",
-        data: [6, 5, 5, 7, 6],
-      },
-    ],
-    tooltip: {
-      enabled: false,
-      intersect: true,
-    },
-    chart: {
-      height: 350,
-      type: "radar",
-    },
-    title: {
-      text: "Front-End Skill",
-      style: {
-        color: "#ffffff",
-        fontSize: "20px",
-        fontWeight: "bold",
-      },
-    },
-    stroke: {
-      show: true,
-      width: 2,
-      colors: ["#0d6efd"],
-      dashArray: 0,
-    },
-    yaxis: {
-      show: false,
-    },
-    markers: {
-      size: 4,
-      hover: {
-        size: 7,
-      },
-    },
-    xaxis: {
-      categories: ["HTML", "CSS", "Javascript", "Boostrap", "Jquery"],
-      labels: {
-        show: true,
-        style: {
-          colors: ["#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff"],
-          fontSize: "11px",
-          fontFamily: "Arial",
-        },
-      },
-    },
-  };
+  $(".ch").load("fe_chart.html");
+  $(".click-tab-1").on("click", () => {
+    $(".click-tab-1").addClass("active");
+    $(".click-tab-2").removeClass("active");
+    $(".ch").load("fe_chart.html");
+  });
+  $(".click-tab-2").on("click", () => {
+    $(".click-tab-2").addClass("active");
+    $(".click-tab-1").removeClass("active");
+    $(".ch").load("be_chart.html");
+  });
 
-  var chart = new ApexCharts(document.querySelector("#chart"), options);
-
-  chart.render();
-</script>
