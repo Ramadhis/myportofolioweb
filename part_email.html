@@ -4,40 +4,50 @@
       <h3>Halaman Contact</h3>
     </div>
     <div class="col-md-6 ps-md-4" style="margin-top: 50px">
-      <form action="#" method="POST">
+      <form action="javascript:void(0)" method="get">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-12">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label f-style-bhan text-light">Name</label>
-              <input type="text" class="form-control" placeholder="Name" />
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label f-style-bhan text-light">Email address</label>
-              <input type="email" class="form-control" placeholder="name@example.com" />
+              <input type="text" class="form-control name" placeholder="Name" />
             </div>
           </div>
           <div class="col-md-12">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label f-style-bhan text-light">Subject</label>
-              <input type="text" class="form-control" placeholder="Subject" />
+              <input type="text" class="form-control subject" placeholder="Subject" />
             </div>
           </div>
           <div class="col-md-12">
             <div class="mb-3">
               <label for="exampleFormControlTextarea1" class="form-label f-style-bhan text-light">Message</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Type your message here...." rows="5"></textarea>
+              <textarea class="form-control" id="exampleFormControlTextarea1 message" placeholder="Type your message here...." rows="5"></textarea>
             </div>
           </div>
+
           <div class="col-md-12">
-            <input type="submit" class="form-control btn btn-primary f-style-bhan" value="Send" />
+            <button class="form-control btn btn-primary f-style-bhan sub">Send</button>
+            <input type="submit" style="display: none" class="form-control btn btn-primary f-style-bhan" value="Send" />
           </div>
         </div>
       </form>
+      <a class="ahr" id="hre" href="mailto:m.ramadhiansyah.i@gmail.com?subject"></a>
     </div>
     <div class="col-md-6 d-flex align-self-center justify-content-center">
       <img src="img/logo-md.png " class="" alt="" width="50%" />
     </div>
   </div>
 </div>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+  $(".sub").on("click", () => {
+    let name = $(".name").val();
+    let subject = $(".subject").val();
+    let message = $.trim($("textarea").val());
+    let link = `mailto:m.ramadhiansyah.i@gmail.com?subject=${subject}&body=hello my name ${name}.%0D%0AMessage: ${message}`;
+    $(".ahr").attr("href", link);
+    $("#hre")[0].click();
+    alert("ok");
+    // $("#hre").trigger("click");
+  });
+</script>
