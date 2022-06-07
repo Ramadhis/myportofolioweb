@@ -45,7 +45,7 @@
           <a class="nav-link click-tab-1 active" aria-current="page" href="#">Front-End</a>
         </li>
         <li class="nav-item bg-blue">
-          <a class="nav-link click-tab-2" href="#">BackEnd-End</a>
+          <a class="nav-link click-tab-2 text-light" href="#">BackEnd-End</a>
         </li>
       </ul>
       
@@ -59,11 +59,15 @@
   $(".click-tab-1").on("click", () => {
     $(".click-tab-1").addClass("active");
     $(".click-tab-2").removeClass("active");
+    $(".click-tab-1").removeClass("text-light");
+    $(".click-tab-2").addClass("text-light");
     $(".ch").load("fe_chart.html");
   });
   $(".click-tab-2").on("click", () => {
     $(".click-tab-2").addClass("active");
     $(".click-tab-1").removeClass("active");
+    $(".click-tab-2").removeClass("text-light");
+    $(".click-tab-1").addClass("text-light");
     $(".ch").load("be_chart.html");
   });
 
