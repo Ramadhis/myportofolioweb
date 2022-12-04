@@ -59,16 +59,16 @@
               <a href="#home" class="btn_home material-icons text-light mb-2 nav_b text-decoration-none first" style="padding: 7px" data-bs-toggle="tooltip" data-bs-placement="top" title="Home"> home</a>
             </div>
             <div>
-              <a href="#about" class="btn_about material-icons text-light mb-2 nav_b text-decoration-none" style="padding: 7px" data-bs-toggle="tooltip" data-bs-placement="right" title="About"> person</a>
+              <a href="#about" class="btn_about material-icons text-light mb-2 nav_b text-decoration-none second" style="padding: 7px" data-bs-toggle="tooltip" data-bs-placement="right" title="About"> person</a>
             </div>
             <div>
-              <a href="#skill" class="btn_skill material-icons text-light mb-2 nav_b text-decoration-none" style="padding: 7px" data-bs-toggle="tooltip" data-bs-placement="right" title="Skill"> api</a>
+              <a href="#skill" class="btn_skill material-icons text-light mb-2 nav_b text-decoration-none third" style="padding: 7px" data-bs-toggle="tooltip" data-bs-placement="right" title="Skill"> api</a>
             </div>
             <div>
-              <a href="#portofolio" class="btn_porto material-icons text-light mb-2 nav_b text-decoration-none" style="padding: 7px" data-bs-toggle="tooltip" data-bs-placement="right" title="Portofolio"> description</a>
+              <a href="#portofolio" class="btn_porto material-icons text-light mb-2 nav_b text-decoration-none fourth" style="padding: 7px" data-bs-toggle="tooltip" data-bs-placement="right" title="Portofolio"> description</a>
             </div>
             <div>
-              <a href="#email" class="btn_email material-icons text-light nav_b text-decoration-none" style="padding: 7px" data-bs-toggle="tooltip" data-bs-placement="right" title="Contact"> email</a>
+              <a href="#email" class="btn_email material-icons text-light nav_b text-decoration-none fifth" style="padding: 7px" data-bs-toggle="tooltip" data-bs-placement="right" title="Contact"> email</a>
             </div>
           </div>
         </div>
@@ -91,8 +91,27 @@
         return new bootstrap.Tooltip(tooltipTriggerEl);
       });
 
-      $(".content").load("part_home.html");
-      $(".first").focus();
+      $(document).ready(function () {
+        let url = window.location.href;
+        let splitUrl = url.split("#");
+
+        if (splitUrl[1] === "home") {
+          $(".first").focus();
+          $(".content").load("part_home.html");
+        } else if (splitUrl[1] === "about") {
+          $(".second").focus();
+          $(".content").load("part_about.html");
+        } else if (splitUrl[1] === "skill") {
+          $(".third").focus();
+          $(".content").load("part_skill.html");
+        } else if (splitUrl[1] === "portofolio") {
+          $(".fourth").focus();
+          $(".content").load("part_porto.html");
+        } else if (splitUrl[1] === "email") {
+          $(".fifth").focus();
+          $(".content").load("part_email.html");
+        }
+      });
 
       $(".btn_home").on("click", function () {
         $(".content").load("part_home.html", () => {
