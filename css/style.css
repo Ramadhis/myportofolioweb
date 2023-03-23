@@ -6,6 +6,11 @@
   .sidebar { 
     display: none;
   }
+
+  .mb-custom {
+    margin-bottom: 100px;
+  }
+
   .mini-sidebar-group {
     position: fixed;
     margin-right: 10px;
