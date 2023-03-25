@@ -13,8 +13,18 @@
   <link rel="stylesheet" href="css/style.css">
   <title>Ramadhiansyah | Portofolio Web</title>
   <style>
+    html,
+    body {
+      bottom: 0;
+      min-height: 100%
+    }
+
     .bg-content {
-      background-color: #00aeff;
+      /* background-color: #00aeff; */
+
+      background-repeat: no-repeat;
+      background: rgb(0, 24, 36);
+      background: linear-gradient(to bottom right, #005bea 0%, #005bea 40%, #00c6fb 100%);
     }
 
     .at {
@@ -54,7 +64,7 @@
   </style>
 </head>
 
-<body class="bg-content">
+<body class="bg-content" style="height: 100%; background-repeat: no-repeat;">
   <div class="mini-sidebar-group">
     <div class="radius-top">&nbsp</div>
     <div class="mini-sidebar">
@@ -84,8 +94,8 @@
     </div>
     <div class="radius-bottom">&nbsp</div>
   </div>
-  <div class="container-fluid">
-    <div class="row mb-custom">
+  <div class="container-fluid" style="height: 100%;">
+    <div class="row mb-custom h-100" style="height: 100%;">
       <!-- d-flex justify-content-evenly -->
       <div class="sidebar">
         <img src="img/logo.png" class="logo-size mt-3" />
@@ -113,8 +123,8 @@
           </div>
         </div>
       </div>
-      <div class="content col bg-side"></div>
-      <div class="col-md-12 f-style-free text- fixed-bottom text-light mb-2 me-4">
+      <div class="content col bg-side h-100" style="height: 100%;"></div>
+      <div class="col-md-12 f-style-free text- fixed-bottom text-light me-4">
         <h3 class="" style="float: right; bottom: 0px">&copy; Ramadhiansyah 2022</h3>
       </div>
     </div>
